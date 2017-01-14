@@ -1,6 +1,6 @@
 #50 ideas/concepts for CART353
 
-1. Generative art aesthetically similar to [this](https://www.flickr.com/photos/solaas/albums/72157613484932009).
+1. Two, or poentially three dimensional generative art aesthetically similar to [this](https://www.flickr.com/photos/solaas/albums/72157613484932009) project collection.
 
 2. A geometric audio visulaizer with a similar level of complexity as [Karma Field's New Age Dark Age](https://www.youtube.com/watch?v=Q64xPR6Y5ZI) album.
 
