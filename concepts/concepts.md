@@ -28,4 +28,10 @@
 
 14. A two person platformer game played on a phone, where the phone is flipped in a way that players play opposed to one another, and help eachother out through their opposing gravity.
 
-15. 
+15. A customizeable, three dimensional voxel-based map generation algorithm.
+
+16. A minimal image viewer desktop application that allows for rotation, zooming, and creates a color palette based on primary image colors.
+
+17. 3D fractal environment and object creation and navigation tool.
+
+18. 
