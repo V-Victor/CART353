@@ -1,6 +1,6 @@
 #50 ideas/concepts for CART353
 
-###internet (3)
+###internet (4)
 
 Twitter bot that, every hour, tweets one of the highest trending topics (up to 4 words) from Google searches.
 
@@ -8,13 +8,17 @@ Twitter bot that browses the Twitterverse and retweets pertinent tweets (text, p
 
 Twitter bot that browses Twitter in search for jobs, and applies for them through a reply.
 
-###games (3)
+3D map of the internet.
+
+###games (4)
 
 Experimental dating game with computers and confusing attempts at communication.
 
 Highly stylized [digital card adventure game](https://www.youtube.com/watch?v=GNoZrr56GqA).
 
 Two person platformer game played on a phone, where the phone is flipped in a way that players play opposed to one another, and help eachother out through their opposing gravity.
+
+Typical 'connect the pipes' game in 3D space.
 
 ###mathematics & generation (8)
 
@@ -62,4 +66,4 @@ Photo processing system that compares two images, recognizes patterns from each 
 
 2D matrix encoding and decoding system and application.
 
-##total: 26
+##total: 28
