@@ -1,6 +1,6 @@
 #50 ideas/concepts for CART353
-#####Victor Ivanov
-#####40031772
+####Victor Ivanov
+####40031772
 
 ###mathematics & generation (10)
 
