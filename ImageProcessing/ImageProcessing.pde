@@ -10,6 +10,9 @@ boolean keyReady = true;
 //used to determine UI opacity to allow it to fade over time
 float opacity = 255;
 
+//boolean used for third mix method, flipped using user input (mouse click)
+boolean continuous = false;
+
 PImage source;
 PImage modifier;
 PImage remix;
@@ -21,8 +24,8 @@ void setup() {
   frameRate(30);
 
   //load images ('source' is to be modified through 'modifier', remix is the result)
-  //source = loadImage("http://i.imgur.com/NZwYggo.jpg");
-  //modifier = loadImage("http://wallpapercave.com/wp/Jzn5hwl.jpg");
+  //modifier = loadImage("http://i.imgur.com/NZwYggo.jpg");
+  //source = loadImage("http://wallpapercave.com/wp/Jzn5hwl.jpg");
   source = loadImage("https://i.ytimg.com/vi/lt0WQ8JzLz4/maxresdefault.jpg");
   modifier = loadImage("http://weknowyourdreams.com/images/space/space-03.jpg");
   remix = createImage(source.width, source.height, RGB);
@@ -50,7 +53,7 @@ void draw() {
     break;
 
   case 2:
-    mix.threeRemix();
+    mix.threeRemix(continuous);
     remix = mix.getRemix();
     break;
   }
@@ -65,18 +68,22 @@ void draw() {
   //controls
   if (keyPressed && keyReady) {
     switch (key) {
-    case ' ':                           //space to save image
+    case ' ':                           //'space' to save image
       save("Remix" + imageNum + ".png");
       imageNum ++;
       keyReady = false;
       break;
 
-    case '/':                           //slash to cycle through mix modes
+    case '/':                           //'slash' to cycle through mix modes
       if (mode < 2) mode += 1;
       else mode = 0;
       opacity = 255;
       keyReady = false;
       break;
+
+    case '.':                           //'period' to flip 'continuous'
+      continuous = !continuous;
+      keyReady = false;
     }
   }
 
