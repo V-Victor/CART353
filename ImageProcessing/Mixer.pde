@@ -101,19 +101,17 @@ class Mixer {
         float modifierB = blue (modifier.pixels[constrain(location, 0, modifier.pixels.length - 1)]);
 
         //check if 'source' pixel colors are sufficiently similar to 'modifier' pixel colors
-        if (constrain(sourceR + modX, 0, 255) >= modifierR && constrain(sourceR - modX, 0, 255) <= modifierR) {
-          if (constrain(sourceG + modX, 0, 255) >= modifierG && constrain(sourceG - modX, 0, 255) <= modifierG) {
-            if (constrain(sourceB + modX, 0, 255) >= modifierB && constrain(sourceB - modX, 0, 255) <= modifierB) {
-              //check if pixelChecker has come accross modY amount of pixels, to create dynamic interval between drawing switch
-              if (pixelChecker >= modY) {
-                if (continuous == false) {
-                  flag = !flag;
-                } else {
-                  flag = true;
-                }
-                pixelChecker = 0;
-              }
+        float difference = dist(sourceR, sourceG, sourceB, modifierR, modifierG, modifierB);
+        
+        if (difference < modX) {
+          //check if pixelChecker has come accross modY amount of pixels, to create dynamic interval between drawing switch
+          if (pixelChecker >= modY) {
+            if (continuous == false) {
+              flag = !flag;
+            } else {
+              flag = true;
             }
+            pixelChecker = 0;
           }
         }
 
