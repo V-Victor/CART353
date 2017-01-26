@@ -1,8 +1,8 @@
-#Parallelia
+#Elyium
 
 ###What it is
 
-_Parallelia_ is a mobile game with a text-only interface that motivates users to investigate an alternative 'fantasy science' universe synchronized with our own.
+_Elyium_ is a mobile game with a text-only interface that motivates users to investigate an alternative 'fantasy science' universe synchronized with our own.
 
 The user walks around with their phone, and at certain landmarks in the physical world (a store, a monument, a park, etc.), they are met with objects, people, or entities. Each of these encounters is a narrative sequence that reveals a portion of the events that have occured in the area and includes a player choice that affects the progression and branching of the narrative experience.
 
@@ -40,7 +40,7 @@ I'm inspired by the concept behind ARG (alternate reality games), though with a 
 
 [The World Is Yours](https://preview.c9users.io/sarahlauzon/final-project/final_project/index.html?_c9_id=livepreview3&_c9_host=https%3A%2F%2Fide.c9.io) - Narrative
 
-_The World Is Yours_ is a non-linear interactive text experience that has a peculiar way of telling a story that I find especially appealing. It is a bit too ambiguous for my taste, and I do not see _Parallelia_ adopting this storytelling method entirely, but the content matter and phrasing is something I'd very much like to experiment with.
+_The World Is Yours_ is a non-linear interactive text experience that has a peculiar way of telling a story that I find especially appealing. It is a bit too ambiguous for my taste, and I do not see _Elyium_ adopting this storytelling method entirely, but the content matter and phrasing is something I'd very much like to experiment with.
 
 [Jon Hopkins - We Disappear](https://www.youtube.com/watch?v=wqhCDbagWh8) - Atmosphere
 
