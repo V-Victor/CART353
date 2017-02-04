@@ -4,6 +4,12 @@ class Mapper implements LocationListener {
   float latitude  = 0;
   float longitude = 0;
 
+  //coordinates to keep track of distance moved
+  float recLat = 0;
+  float recLon = 0;
+  
+  float unit = 2;
+
   //internal check variable
   boolean hasLocation = false;
 
@@ -11,6 +17,11 @@ class Mapper implements LocationListener {
   public void onLocationChanged(Location location) {
     latitude  = (float)location.getLatitude();
     longitude = (float)location.getLongitude();
+    
+    if (dist(latitude, longitude, recLat, recLon) > unit) {
+      recLat = latitude;
+      recLon = longitude;
+    }
   }
 
   //gets-sets
