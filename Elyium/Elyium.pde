@@ -14,23 +14,16 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.Manifest;
 
-//accelorometer variables
+//accelorometer
+Accelerometer accelorometer;
+
+//accelorometer managment
 Context accContext;
 SensorManager accManager;
 Sensor acc;
-AccelerometerListener accListener;
-float ax, ay, az;
 
-//gps data
-float currentLatitude  = 0;
-float currentLongitude = 0;
-float currentAccuracy  = 0;
-String currentProvider = "";
-boolean hasLocation = false;
-
-//location variables
-LocationManager locManager;
-MyLocationListener locListener;
+//location
+Mapper mapper;
 
 void setup() {
   fullScreen();
@@ -42,16 +35,18 @@ void setup() {
 void draw() {
   background(0);
 
-  if (hasLocation) {
-    text("Latitude: " + currentLatitude, 20, 50);
-    text("Longitude: " + currentLongitude, 20, 100);
-    text("Accuracy: " + currentAccuracy, 20, 150);
-    text("Provider: " + currentProvider, 20, 200);
+  //DEBUGGING - show coordinates
+  if (mapper.getHasLocation()) {
+    textAlign(CENTER);
+    text("Lat: " + mapper.getLatitude(), width/2, height/2 - 50);
+    text("Lon: " + mapper.getLongitude(), width/2, height/2);
   } else {
     text("No permissions to access location", 20, 40);
   }
 
-  text("X: " + ax, 10, 300);
-  text("Y: " + ay, 10, 360);
-  text("Z: " + az, 10, 420);
+  //DEBUGGING - show accelorometer values
+  textAlign(LEFT);
+  text("X: " + accelorometer.ax, 10, 50);
+  text("Y: " + accelorometer.ay, 10, 100);
+  text("Z: " + accelorometer.az, 10, 150);
 }

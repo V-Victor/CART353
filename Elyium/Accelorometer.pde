@@ -1,13 +1,18 @@
 //accelorometer listener
-class AccelerometerListener implements SensorEventListener {
+class Accelerometer implements SensorEventListener {
+  //accelorometer values
+  float ax, ay, az;
+
   //update x y z when new sensor data is recieved
   public void onSensorChanged(SensorEvent event) {
     ax = event.values[0];
     ay = event.values[1];
     az = event.values[2];
   }
-  //clear SensorEventListener's onAccuracyChanged method (don't need it)
+
+  //must implement abstract methods from SensorEventListener
   public void onAccuracyChanged(Sensor acc, int accuracy) {
+    //clear
   }
 }
 
@@ -16,7 +21,7 @@ public void onResume() {
   super.onResume();
   //only register listener if manager exists
   if (accManager != null) {
-    accManager.registerListener(accListener, acc, SensorManager.SENSOR_DELAY_GAME);
+    accManager.registerListener(accelorometer, acc, SensorManager.SENSOR_DELAY_GAME);
   }
 }
 
@@ -25,7 +30,7 @@ public void onPause() {
   super.onPause();
   //only unregister listener if manager exists
   if (accManager != null) {
-    accManager.unregisterListener(accListener);
+    accManager.unregisterListener(accelorometer);
   }
 }
 
@@ -34,6 +39,6 @@ public void setupAccelorometer() {
   accContext = getActivity();
   accManager = (SensorManager)accContext.getSystemService(Context.SENSOR_SERVICE);
   acc = accManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-  accListener = new AccelerometerListener();
-  accManager.registerListener(accListener, acc, SensorManager.SENSOR_DELAY_GAME);
+  accelorometer = new Accelerometer();
+  accManager.registerListener(accelorometer, acc, SensorManager.SENSOR_DELAY_GAME);
 }

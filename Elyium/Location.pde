@@ -1,21 +1,42 @@
-//location listener
-class MyLocationListener implements LocationListener {
+//location listener and map provider
+class Mapper implements LocationListener {
+  //location coordinates
+  float latitude  = 0;
+  float longitude = 0;
+
+  //internal check variable
+  boolean hasLocation = false;
+
   //on new data reception, update gps data
   public void onLocationChanged(Location location) {
-    currentLatitude  = (float)location.getLatitude();
-    currentLongitude = (float)location.getLongitude();
-    currentAccuracy  = (float)location.getAccuracy();
-    currentProvider  = location.getProvider();
+    latitude  = (float)location.getLatitude();
+    longitude = (float)location.getLongitude();
   }
 
+  //gets-sets
+  public float getLatitude() {
+    return latitude;
+  }
+
+  public float getLongitude() {
+    return longitude;
+  }
+
+  public void setHasLocation(boolean loc) {
+    hasLocation = loc;
+  }
+
+  public boolean getHasLocation() {
+    return hasLocation;
+  }
+
+  //must implement abstract methods from LocationListener
   public void onProviderDisabled (String provider) {
-    currentProvider = "";
+    //clear
   }
-
   public void onProviderEnabled (String provider) {
-    currentProvider = provider;
+    //clear
   }
-
   public void onStatusChanged (String provider, int status, Bundle extras) {
     //clear
   }
@@ -23,13 +44,15 @@ class MyLocationListener implements LocationListener {
 
 //setup location sensor when permission is granted by user (and check if location can be read)
 void onPermissionsGranted() {
+  LocationManager locManager;
+
   if (checkPermission(Manifest.permission.ACCESS_FINE_LOCATION) || checkPermission(Manifest.permission.ACCESS_COARSE_LOCATION)) {
     Context locContext = getActivity();
-    locListener = new MyLocationListener();
+    mapper = new Mapper();
     locManager = (LocationManager)locContext.getSystemService(Context.LOCATION_SERVICE); 
-    locManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locListener);
-    hasLocation = true;
+    locManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, mapper);
+    mapper.setHasLocation(true);
   } else {
-    hasLocation = false;
+    mapper.setHasLocation(false);
   }
 }

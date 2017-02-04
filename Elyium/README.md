@@ -68,9 +68,9 @@ Now, I realize that a non-linear, procedurally generated branching narrative wit
 
 With that being said, here's a breakdown of the tasks to be completed for the production of this project, in (more or less) chronological order:
 
-- Get acquainted with Processing for Android. Create a few sketches, make sure they run, and test location services and accelorometer.
+- ~Get acquainted with Processing for Android. Create a few sketches, make sure they run, and test location services and accelorometer.~
 
-- Create a simple application that increases a counter when the device is shaken, using the accelorometer. This will replace geolocation for now, the number of steps will determine how far the player has travelled, and after passing a certain number of steps, a random encounter with an entity would trigger.
+- ~Create a simple application that increases a counter when the device is shaken, using the accelorometer. This will replace geolocation for now, the number of steps will determine how far the player has travelled, and after passing a certain number of steps, a random encounter with an entity would trigger.~
 
 - Create an image-to-ASCII algorithm. Hand-pick the images to be used for the story. This will replace the google-searched images, because searching through google images and automating a curating process for which image best suits the narrative sequence is not easy to make.
 
