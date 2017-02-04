@@ -25,6 +25,12 @@ Sensor acc;
 //location
 Mapper mapper;
 
+//interface
+Interface UI = new Interface();
+
+//general use timer
+Timer timer = new Timer();
+
 void setup() {
   fullScreen();
 
@@ -35,18 +41,18 @@ void setup() {
 void draw() {
   background(0);
 
-  //DEBUGGING - show coordinates
-  if (mapper.getHasLocation()) {
-    textAlign(CENTER);
-    text("Lat: " + mapper.getLatitude(), width/2, height/2 - 50);
-    text("Lon: " + mapper.getLongitude(), width/2, height/2);
-  } else {
-    text("No permissions to access location", 20, 40);
-  }
+  ////DEBUGGING - show coordinates
+  //if (mapper.getHasLocation()) {
+  //  textAlign(CENTER);
+  //  text("Lat: " + mapper.getLatitude(), width/2, height/2 - 50);
+  //  text("Lon: " + mapper.getLongitude(), width/2, height/2);
+  //} else {
+  //  text("No permissions to access location", 20, 40);
+  //}
 
-  //DEBUGGING - show accelorometer values
-  textAlign(LEFT);
-  text("X: " + accelorometer.ax, 10, 50);
-  text("Y: " + accelorometer.ay, 10, 100);
-  text("Z: " + accelorometer.az, 10, 150);
+  ////DEBUGGING - show accelorometer values
+  //textAlign(LEFT);
+  //text("X: " + accelorometer.ax, 10, 50);
+  //text("Y: " + accelorometer.ay, 10, 100);
+  //text("Z: " + accelorometer.az, 10, 150);
 }
