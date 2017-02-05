@@ -16,24 +16,6 @@ class Accelerometer implements SensorEventListener {
   }
 }
 
-//register listener on android only when in use to avoid unnecessary battery usage
-public void onResume() {
-  super.onResume();
-  //only register listener if manager exists
-  if (accManager != null) {
-    accManager.registerListener(accelorometer, acc, SensorManager.SENSOR_DELAY_GAME);
-  }
-}
-
-//unregister listener on android pause to avoid unnecessary battery usage
-public void onPause() {
-  super.onPause();
-  //only unregister listener if manager exists
-  if (accManager != null) {
-    accManager.unregisterListener(accelorometer);
-  }
-}
-
 //use sensor API to obtain context of activity containing the sketch (I literally copied this off Processing 4 Android's website, don't ask)
 public void setupAccelorometer() {
   accContext = getActivity();
