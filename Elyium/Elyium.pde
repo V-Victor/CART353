@@ -27,7 +27,7 @@ Mapper mapper;
 
 //interface
 Interface UI = new Interface();
-PFont console = createFont("cpmono", 24, false);
+PFont console;
 PImage originSource;
 
 int count = 1;
@@ -40,7 +40,10 @@ Timer timer = new Timer();
 
 void setup() {
   fullScreen();
+
+  console = createFont("Menlo-Regular.ttf", 24, false);
   textFont(console);
+
   setupAccelorometer();
   background(0);
 }
@@ -55,10 +58,12 @@ void draw() {
       if (count + 1 < 12) {
         count++;
         UI.setRendered(false);
-      } else count = 1;
+      } else {
+        count = 1;
+        UI.setRendered(false);
+      }
+      ready = false;
     }
-    ready = false;
   }
-
   if (mousePressed == false) ready = true;
 }

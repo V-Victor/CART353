@@ -4,11 +4,10 @@ public void onResume() {
   if (accManager != null) {
     accManager.registerListener(accelorometer, acc, SensorManager.SENSOR_DELAY_GAME);
   }
-  
+
   //re-render visuals
   UI.setRendered(false);
 }
-
 
 public void onPause() {
   super.onPause();

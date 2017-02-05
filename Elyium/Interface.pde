@@ -7,11 +7,11 @@ class Interface {
   PImage source;
 
   //possible characters for ASCII art
-  String[] chars = {".", "*", "o", "i", "+", "x", "=", "v", "%", "#"};
+  String[] chars = {".", "'", "-", "+", ";", "=", "x", "*", "#"};
 
   //boolean to stop cover image from being re-rendered
   boolean rendered = false;
-  
+
   int brightnessThresh = 40;
 
   Interface() {
@@ -69,14 +69,14 @@ class Interface {
     textAlign(CENTER);
     fill(255);
     noStroke();
-    textSize(10);
+    textSize(12);
 
-    for (int x = 0; x < source.width; x += 7) {
-      for (int y = 0; y < source.height; y += 7) {
+    for (int x = 0; x < source.width; x += 9) {
+      for (int y = 0; y < source.height; y += 9) {
         int loc = x + (y * source.width);
 
         int brightness = int(brightness(source.pixels[loc]));
-        if (brightness > brightnessThresh) text(chars[int(map(brightness, brightnessThresh, 255, 0, 9))], x + width/4, y + height/20);
+        if (brightness > brightnessThresh) text(chars[int(map(brightness, brightnessThresh, 255, 0, chars.length - 1))], x + width/4 + (width/2 - 500), y + height/20);
       }
     }
   }
@@ -93,14 +93,14 @@ private void data() {
   textSize(24);
   //coordinates
   if (mapper.getHasLocation()) {
-    text("Lat: " + mapper.getLatitude(), width, height - 50);
-    text("Lon: " + mapper.getLongitude(), width, height - 70);
+    text("Lat: " + mapper.getLatitude(), width, height);
+    text("Lon: " + mapper.getLongitude(), width, height - 20);
   } else {
-    text("No permissions to access location", width, height - 10);
+    text("No permissions to access location", width, height - 20);
   }
 
   //accelorometer values
-  text("X: " + accelorometer.ax, width, height - 140);
-  text("Y: " + accelorometer.ay, width, height - 120);
+  text("X: " + accelorometer.ax, width, height - 60);
+  text("Y: " + accelorometer.ay, width, height - 80);
   text("Z: " + accelorometer.az, width, height - 100);
 }
