@@ -72,9 +72,9 @@ With that being said, here's a breakdown of the tasks to be completed for the pr
 
 - ~~Create a simple application that increases a counter when the device is shaken, using the accelorometer. This will replace geolocation for now, the number of steps will determine how far the player has travelled, and after passing a certain number of steps, a random encounter with an entity would trigger.~~
 
-- Create an image-to-ASCII algorithm. Hand-pick the images to be used for the story. This will replace the google-searched images, because searching through google images and automating a curating process for which image best suits the narrative sequence is not easy to make.
+- ~~Create an image-to-ASCII algorithm. Hand-pick the images to be used for the story. This will replace the google-searched images, because searching through google images and automating a curating process for which image best suits the narrative sequence is not easy to make.~~
 
-- Create a simple interface engine for the application. This is when the application starts to be put together.
+- ~~Create a simple interface engine for the application. This is when the application starts to be put together.~~
 
 - Create a preliminary selection of characters and objects to interact with. These are actually quite simple, as both objects and characters have relatively similar functionality: present a narrative, give the player a choice. The main difference between the two is how characters would potentially have 'standing' with the player that would evolve over time and affect how the player interacts with them, whereas objects would not.
 
