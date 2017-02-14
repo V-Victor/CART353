@@ -1,6 +1,3 @@
-# CART353
+#Horses
 
-Victor Ivanov
-40031772
-
-Studio Class Projects &amp; Assignments
+_Horses_ is a game about coping with your obsessive hording problem.
