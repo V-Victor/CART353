@@ -1,3 +1,6 @@
-#Horses
+# CART353
 
-_Horses_ is a game about coping with your obsessive hording problem.
+Victor Ivanov
+40031772
+
+Studio Class Projects &amp; Assignments
