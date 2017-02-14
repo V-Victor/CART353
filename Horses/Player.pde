@@ -7,6 +7,8 @@ class Player {
   int massLimit = 10;
   float accelerationSpeed = 0;
   float decelerationSpeed = 0;
+  
+  float gravField = 150;
 
   //W A S D
   boolean[] keys = {false, false, false, false};
@@ -20,6 +22,10 @@ class Player {
 
   float getY() {
     return location.y;
+  }
+  
+  float getGravField() {
+    return gravField; 
   }
 
   void move() {
@@ -46,6 +52,7 @@ class Player {
 
   void eat() {
     if (mass > massLimit) mass = massLimit;
+    gravField = mass * 40;
   }
 }
 
