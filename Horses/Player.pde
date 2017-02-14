@@ -5,9 +5,9 @@ class Player {
 
   float mass = random(3.4, 4);
   int massLimit = 10;
-  float accelerationSpeed = 0;
-  float decelerationSpeed = 0;
-  
+  float acc = 0;
+  float dec = 0;
+
   float gravField = 150;
 
   //W A S D
@@ -23,23 +23,28 @@ class Player {
   float getY() {
     return location.y;
   }
-  
+
   float getGravField() {
-    return gravField; 
+    return gravField;
   }
 
   void move() {
-    accelerationSpeed = 15 - mass;
-    decelerationSpeed = mass/2;
+    acc = 15 - mass;
+    dec = mass/2;
 
-    if (keys[0] == true) acceleration.y -= accelerationSpeed;
-    if (keys[1] == true) acceleration.x -= accelerationSpeed;
-    if (keys[2] == true) acceleration.y += accelerationSpeed;
-    if (keys[3] == true) acceleration.x += accelerationSpeed;
+    if (keys[0] == true) acceleration.y += -acc;
+    if (keys[1] == true) acceleration.x += -acc;
+    if (keys[2] == true) acceleration.y += acc;
+    if (keys[3] == true) acceleration.x += acc;
 
-    acceleration.setMag(acceleration.mag() / decelerationSpeed);
+    acceleration.limit(50);
+
+    acceleration.setMag(acceleration.mag() / dec);
+    velocity.setMag(velocity.mag() / dec);
+
     velocity.add(acceleration);
-    velocity.setMag(velocity.mag() / decelerationSpeed);
+    velocity.limit(50);
+
     location.add(velocity);
   }
 
@@ -52,6 +57,7 @@ class Player {
 
   void eat() {
     if (mass > massLimit) mass = massLimit;
+    else mass += 0.1;
     gravField = mass * 40;
   }
 }

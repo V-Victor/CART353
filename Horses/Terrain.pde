@@ -32,7 +32,7 @@ class Terrain {
       for (int j = 0; j < height; j++) {
         int loc = i + j * width;
         float bright = brightness(pixels[loc]);
-        
+
         if (bright < 120) pixels[loc] = color(0);
         else if (bright < 190) pixels[loc] = color(80);
         else pixels[loc] = color(255);

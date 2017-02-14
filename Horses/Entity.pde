@@ -4,11 +4,13 @@ class Entity {
   PVector aceleration = new PVector(0, 0);
 
   float mass = random(1, 10);
-  float minDist = 100;
+  float minDist = 100.0;
+
+  float rotation = 0.0;
 
   Entity() {
-    location.x = player.getX() + random(-5000, 5000);
-    location.y = player.getY() + random(-5000, 5000);
+    location.x = width/2 + random(-5000, 5000);
+    location.y = height/2 + random(-5000, 5000);
   }
 
   void move() {
@@ -20,6 +22,12 @@ class Entity {
     noFill();
     stroke(255);
     strokeWeight(2);
-    rect(location.x - x, location.y - y, 12, 12);
+    rectMode(CENTER);
+    
+    pushMatrix();
+    translate(location.x - x, location.y - y);
+    rotate(rotation += 0.1);
+    rect(0, 0, 12, 12);
+    popMatrix();
   }
 }

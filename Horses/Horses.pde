@@ -23,5 +23,6 @@ void draw() {
   for (int i = 0; i < 1000; i++) {
     entities[i].move();
     entities[i].display(player.getX(), player.getY());
+    //if (entities[i]
   }
 }
