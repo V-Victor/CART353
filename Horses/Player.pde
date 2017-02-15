@@ -8,7 +8,7 @@ class Player {
   float acc = 0;
   float dec = 0;
 
-  float gravField = 150;
+  float gravField = 400;
 
   //W A S D
   boolean[] keys = {false, false, false, false};
@@ -37,13 +37,13 @@ class Player {
     if (keys[2] == true) acceleration.y += acc;
     if (keys[3] == true) acceleration.x += acc;
 
-    acceleration.limit(50);
+    acceleration.limit(10);
 
     acceleration.setMag(acceleration.mag() / dec);
     velocity.setMag(velocity.mag() / dec);
 
     velocity.add(acceleration);
-    velocity.limit(50);
+    velocity.limit(10);
 
     location.add(velocity);
   }
@@ -58,7 +58,7 @@ class Player {
   void eat() {
     if (mass > massLimit) mass = massLimit;
     else mass += 0.1;
-    gravField = mass * 40;
+    gravField = mass * 100;
   }
 }
 

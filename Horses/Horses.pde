@@ -8,7 +8,7 @@ void setup() {
   noSmooth();
 
   for (int i = 0; i < 1000; i++) {
-    entities[i] = new Entity();
+    entities[i] = new Entity(player.getX(), player.getY());
   }
 }
 
@@ -21,7 +21,7 @@ void draw() {
   player.display();
 
   for (int i = 0; i < 1000; i++) {
-    entities[i].move();
+    entities[i].move(player.getX(), player.getY(), player.getGravField());
     entities[i].display(player.getX(), player.getY());
     //if (entities[i]
   }
