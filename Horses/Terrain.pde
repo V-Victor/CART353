@@ -9,8 +9,8 @@ class Terrain {
   }
 
   void renderTerrain(float x, float y) {
-    xStart = x / 500;
-    yStart = y / 500;
+    xStart = x / 200;
+    yStart = y / 200;
 
     loadPixels();
     float xOff = xStart;
@@ -33,8 +33,7 @@ class Terrain {
         int loc = i + j * width;
         float bright = brightness(pixels[loc]);
 
-        if (bright < 120) pixels[loc] = color(0);
-        else if (bright < 190) pixels[loc] = color(80);
+        if (bright < 170) pixels[loc] = color(0);
         else pixels[loc] = color(255);
       }
     }

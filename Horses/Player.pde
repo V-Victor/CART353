@@ -3,11 +3,12 @@ class Player {
   PVector velocity = new PVector(0, 0);
   PVector acceleration = new PVector(0, 0);
 
-  float mass = random(3.4, 4);
+  float mass = 4;
   int massLimit = 10;
   float acc = 0;
   float dec = 0;
 
+  int orbits = 4;
   float gravField = 400;
 
   //W A S D
@@ -45,6 +46,9 @@ class Player {
     velocity.add(acceleration);
     velocity.limit(10);
 
+    loadPixels();
+    if (brightness(pixels[pixels.length/2 + width/2]) == 255) velocity.div(2);
+
     location.add(velocity);
   }
 
@@ -56,9 +60,16 @@ class Player {
   }
 
   void eat() {
+    for (int i = 0; i < entities.length; i++) {
+      if (dist(entities[i].location.x - width/2, entities[i].location.y - height/2, location.x, location.y) < gravField) {
+        orbits ++;
+      }
+    }
+
     if (mass > massLimit) mass = massLimit;
-    else mass += 0.1;
-    gravField = mass * 100;
+    else mass = orbits;
+    gravField = mass * 25;
+    orbits = 4;
   }
 }
 
