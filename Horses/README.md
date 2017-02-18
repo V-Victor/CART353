@@ -1,3 +1,3 @@
-#Horses
+#Horses?
 
-_Horses_ is a game about coping with your obsessive hording problem.
+_Horses?_ is small a game about coping with your obsessive hording problem.
