@@ -1,0 +1,6 @@
+class Wind {
+
+  Wind() {
+    //
+  }
+}
