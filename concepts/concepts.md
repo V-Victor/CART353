@@ -1,10 +1,10 @@
-#50 concepts for CART353
-###Victor Ivanov
-###40031772
+# 50 concepts for CART353
+### Victor Ivanov
+### 40031772
 
 #
 
-###mathematics & generation (10)
+### mathematics & generation (10)
 
 Music generated from mathematical expressions.
 
@@ -26,7 +26,7 @@ Generative art that creates [digital topography](http://butdoesitfloat.com/The-f
 
 Cellular automata, alternative variant to [Epic Conway's Game of Life](http://www.math.cornell.edu/~lipa/mec/banner.png).
 
-###games (15)
+### games (15)
 
 Experimental dating game with computers/aliens and confusing attempts at communication.
 
@@ -58,7 +58,7 @@ Endless runner focused on music. Follows all the typical principles of an endles
 
 2D combat/platformer where the more enemies you kill and further you progress through the game, the more game-breaking your abilities become, eventually causing glitches that either help you or balance the experience out.
 
-###internet (6)
+### internet (6)
 
 Twitter bot that, every hour, tweets one of the highest trending topics (up to 4 words) from Google searches.
 
@@ -72,7 +72,7 @@ Unique content managment system for website.
 
 Chatroom where no text is shown. Rather, the text is automatically translated into speech, and users can only communicate through this awkward (and often hilarious) text-to-speech system.
 
-###tools & applications (8)
+### tools & applications (8)
 
 Minimal, grid-based drawing application.
 
@@ -90,7 +90,7 @@ Monitoring and lifestyle desktop tool suite (time, hardware temeperature, hardwa
 
 Clock/alarm application that helps users manage and adapt to certain sleep cycles, including the more unconventional and experimenal ones.
 
-###processing & analysis (11)
+### processing & analysis (11)
 
 Medium-merging application where the user inputs an image and music, and the program modifies the image using data from the audio file.
 
